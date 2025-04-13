@@ -1,0 +1,7 @@
+Flask==2.1.2
+google-auth==2.6.0
+google-auth-oauthlib==0.5.2
+google-api-python-client==2.42.0
+pytz==2022.1
+python-dotenv==0.19.2
+smtplib==1.0.0
