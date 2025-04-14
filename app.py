@@ -124,4 +124,5 @@ def serve_static(filename):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=int(os.getenv('PORT', 8080)))
+    print("🚀 Flask app is starting on port 8080...")
+    app.run(host='0.0.0.0', port=int(os.getenv('PORT', 8080)))
