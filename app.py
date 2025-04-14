@@ -124,4 +124,4 @@ def serve_static(filename):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=int(os.getenv('PORT', 3000)))
+    app.run(debug=True, port=int(os.getenv('PORT', 8080)))
