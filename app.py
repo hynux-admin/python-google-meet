@@ -38,8 +38,19 @@ def auth_google():
 def oauth2callback():
     flow.fetch_token(authorization_response=request.url)
     credentials = flow.credentials
-    print("Refresh Token:", credentials.refresh_token)
-    return 'Authentication successful! Copy the refresh token from console.'
+    refresh_token = credentials.refresh_token
+
+    return f'''
+    <html>
+        <head><title>Google OAuth Successful</title></head>
+        <body style="font-family: Arial, sans-serif; padding: 20px;">
+            <h2>✅ Authentication Successful</h2>
+            <p><strong>Copy your refresh token below and keep it secure:</strong></p>
+            <textarea rows="5" cols="100" readonly>{refresh_token}</textarea>
+            <p style="color: red;"><strong>Note:</strong> Do not share this token. It provides long-term access to your Google Calendar.</p>
+        </body>
+    </html>
+    '''
 
 
 @app.route('/create-meeting', methods=['POST'])
