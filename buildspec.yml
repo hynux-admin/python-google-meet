@@ -2,16 +2,13 @@ version: 0.2
 
 env:
   variables:
-    IMAGE_REPO_NAME: "python-google-meet" # your ECR repo name (create if not exists)
-    AWS_DEFAULT_REGION: "ap-south-1"      # example Mumbai, change to your region
+    IMAGE_REPO_NAME: "python-google-meet"
+    AWS_DEFAULT_REGION: "ap-south-1"
     ECR_REGISTRY: "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com"
 
 phases:
   install:
-    runtime-versions:
-      docker: 20
     commands:
-      echo Installing dependencies...
       echo Logging in to Amazon ECR...
       aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $ECR_REGISTRY
   pre_build:
