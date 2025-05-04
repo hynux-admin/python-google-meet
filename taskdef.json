@@ -7,7 +7,7 @@
   "executionRoleArn": "arn:aws:iam::276073697441:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
-      "name": "flask-container",
+      "name": "hynux_task",
       "image": "PLACEHOLDER",
       "portMappings": [
         {
