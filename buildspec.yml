@@ -12,7 +12,7 @@ phases:
   post_build:
     commands:
       - echo "Writing imagedefinitions.json"
-      - printf '[{"name":"flask-task:1","imageUri":"%s"}]' $REPO_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"flask-task","imageUri":"%s"}]' $REPO_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
   files:
     - imagedefinitions.json
