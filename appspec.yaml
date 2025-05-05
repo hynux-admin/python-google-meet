@@ -3,7 +3,7 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: CODE_DEPLOY
+        TaskDefinition: taskdef.json
         LoadBalancerInfo:
           ContainerName: gmeet
           ContainerPort: 8080
