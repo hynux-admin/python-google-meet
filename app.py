@@ -128,6 +128,9 @@ def send_email(summary, description, start_time, end_time, to_email, meeting_lin
         server.login(os.getenv("ZOHO_USER"), os.getenv("ZOHO_PASS"))
         server.send_message(msg)
 
+@app.route("/health")
+def health():
+    return "OK", 200
 
 @app.route('/<path:filename>')
 def serve_static(filename):
